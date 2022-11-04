@@ -82,4 +82,109 @@ On the bus a logical low level (0) is dominant and a logical high level (1) is r
 
 Voltage supply (Vsup) for an ECU should be between 7 V and 18 V. The limits for how the level of the bus is interpreted are shown in figure.
 
+![logic levels](https://user-images.githubusercontent.com/115522470/199962857-e8120c41-05fb-4f82-8c36-e78047dccc90.jpg)
+
+##### Data Transmission
+
+The LIN network is described by a LDF (LIN Description File) which contains information about frames and signals. This file is used for creation of software in both master and slave.
+
+The master node controls and make sure that the data frames are sent with the right interval and periodicity and that every frame gets enough time space on the bus. This scheduling is based on a LCF (LIN Configuration File) which is downloaded to the master node software.
+
+All data is sent in a frame which contains a header, a response and some response space so the slave will have time to answer. Every frame is sent in a frame slot determined by the LCF.
+
+Messages are created when the master node sends a frame containing a header. The slave node(s) then fills the frame with data depending on the header sent from the master.
+
+![LIN FRAME](https://user-images.githubusercontent.com/115522470/199963047-d339ae0f-b31d-4c3c-9f01-ea245b473281.jpg)
+-4f82-8c36-e78047dccc90.jpg)
+
+There are three different ways of transmitting frames on the bus: unconditional, event triggered, and sporadic frames.
+
+##### Unconditional Frames
+
+This is the “normal” type of LIN communication. The master sends a frame header in a scheduled frame slot and the designated slave node fills the frame with data.
+
+###### Event Triggered Frames
+
+The purpose of this method is to receive as much information from slave nodes without overloading the bus with frames. An event triggered frame can be filled with data from more than one slave node. A slave only updates the data in an event triggered frame when the value has changed. If more than one slave wants to update data in the frame a collision occurs. The master should then send unconditional frames to each of the slaves starting with the one with the highest priority.
+
+###### Sporadic Frames
+
+This method provides some dynamic behavior to the otherwise static LIN protocol. The header of a sporadic frame is only sent from the master when it knows that a signal has been updated in a slave node. Usually the master fills the data bytes of the frame itself and the slave nodes will be the receivers of the information.
+
+###### Definition of a Byte Field
+
+The protocol is byte oriented which means that data is sent one byte at a time. One byte field contains a start bit (dominant), 8 data bits and a stop bit (recessive). The data bits are sent LSB first (least significant bit first). Data transmission can be divided into a master task and a slave task.
+
+![Byte field](https://user-images.githubusercontent.com/115522470/199963407-8b78e92a-77de-4501-8840-1a0b772e4546.jpg)
+
+##### The Master Task
+
+The frame (header) that is sent by the master contains three parts; synch break, synch byte and an ID-field. Each part begins with a start bit and ends with a stop bit.
+
+Synch break marks the start of a message and has to be at least 13 dominant bits long including start bit. Synch break ends with a “break delimiter” which should be at least one recessive bit.
+
+![BRAKE FIELD](https://user-images.githubusercontent.com/115522470/199963615-fb0182f1-225a-4cce-95d3-000b7f7f04f7.jpg)
+8e92a-77de-4501-8840-1a0b772e4546.jpg)
+
+Synch byte is sent to decide the time between two falling edges and thereby determine the transmission rate which the master uses. The bit pattern is 0x55 (01010101, max number of edges). This is especially usable for compatibility with off-the-shelves slave nodes.
+
+![Sync byte field](https://user-images.githubusercontent.com/115522470/199963810-4f0ebb83-4c52-4901-bfcc-48297ec88967.jpg)
+
+The ID field contains a 6 bits long identifier and two parity bits. The 6 bit identifier contains information about sender and receiver and the number of bytes which is expected in the response. The parity bits are calculated as followed: parity P0 is the result of logic “XOR” between ID0, ID1, ID2 and ID4. Parity P1 is the inverted result of logic “XOR” between ID1, ID3, ID4 and ID5.
+
+###### ID field
+
+![id field](https://user-images.githubusercontent.com/115522470/199964072-3dd277cf-52cc-443c-af25-ac046a330721.jpg)
+
+####### Frame length depending on ID
+![frame length on id](https://user-images.githubusercontent.com/115522470/199964287-59e6b040-7ede-4239-8701-a100a6e33668.jpg)
+
+The response (data field) from the slave can be 2, 4 or 8 bytes long depending on the two MSB (Most Significant Byte) of the identifier sent by the master. This ability came with LIN 2.0, older versions have a static length of 8 bytes.
+
+###### The response data field
+
+![response field](https://user-images.githubusercontent.com/115522470/199964473-fff48f45-4199-4e27-a1f2-4ba034e33408.jpg)
+
+##### The Slave Task
+
+The slave waits for synch break and then the synchronization between master and slave begins on synch byte. Depending on the identifier sent from the master the slave will either receive or transmit or do nothing at all. A slave that should transmit sends the number of bytes which the master has requested and then ends the transmission with a checksum field.
+
+There are two different kinds of checksum. The classic checksum is used in LIN 1.3 and consists of the inverted eight bit sum of all (8) data bytes in a message. The new checksum used in LIN 2.0 also incorporates the protected identifier in the checksum calculation. The inverted eight bit sum is not the same as modulo-256. Every time the sum is greater than 256, then 255 is subtracted. Ex: 240+32=272 à 272-255=17 and so on…
+
+To save power the slave nodes will be put in a sleep mode after 4 seconds of bus inactivity or if the master has sent a sleep command. Wakeup from sleep mode is done by a dominant level on the bus which all nodes can create.
+
+##### Diagnostics
+
+A new function in LIN 2.0 is the possibility of reading out diagnostic information from master and slave nodes. For this purpose two frame identifiers are used which both expect 8 data bytes: master request frame with id 60 (0x3c) and slave response with id 61 (0x3d). The first byte of a diagnostic frame is a NAD (Node Address for Diagnostic) which is a one byte long diagnostic node address. The value ranges from 1-127, while 0 is reserved and 128-255 are for free usage. There are three methods for diagnostics: signal based diagnostic, user defined diagnostic or use of a diagnostic transport layer.
+
+##### Signal Based Diagnostic
+
+The signal based diagnostics is the simplest method and uses standard signals in ordinary frames which represent:
+
+•	Low overhead in slave nodes.
+
+•	A standardized concept.
+
+•	Static with no flexibility.
+
+###### User Defined Diagnostic
+
+The user defined diagnostic can be designed to fit the needs for a specific device but this also means that it will not be useful for general purposes. This method uses NADs in the range 128-255.
+
+###### Diagnostic Transport Layer
+
+This method is useful for a LIN network which is built on a CAN-based system where ISO diagnostics is used. NADs 1-127 are used. This method represents:
+
+•	Low load on the master device.
+
+•	Provides ISO diagnostics for LIN slaves.
+
+•	Intended for more complex and powerful LIN nodes.
+
+A diagnostic frame is called a PDU (Packet Data Unit) and starts with a NAD which addresses a certain node. Thereafter follows a PCI (Protocol Control Information) which handles the flow control. If the PCI-type is a Single Frame (SF) the whole diagnostic request command will fit into a single PDU. If the PCI-type is First Frame (FF) the next byte (LEN) will describe the number of bytes to come. The data bytes that do not fit into the first frame will be sent in the following frames with the PCI-type of Continuation Frames (CF). 
+
+###### Compatibility with older versions (LIN 1.3)
+
+A LIN 2.0 master is backward compatible with a LIN 1.3 slave (with limitations). Both LIN 2.0 and LIN 1.3 slaves can coexist in a network but some new features like the improved checksum and automatic baud rate detection have to be avoided.
+
 
