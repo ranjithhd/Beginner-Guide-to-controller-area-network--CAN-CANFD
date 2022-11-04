@@ -37,3 +37,12 @@ Bit stuffing may be used to synchronize several channels before multiplexing or 
 ##### Run length limited coding – To limit the number of consecutive bits of the same value(i.e., binary value) in the data to be transmitted. A bit of the opposite value is inserted after the maximum allowed number of consecutive bits.
 Bit stuffing technique does not ensure that the sent data is intact at the receiver side (i.e., not corrupted by transmission errors). It is merely a way to ensure that the transmission starts and ends at the correct places.
 
+## Day-2 Activity-3 and 4  is to Decipher the recived CAN frame		
+
+The excel sheet of the solution is uploaded
+
+## Day-2 Activity 5  is to create CAN 2.0A frames with different IDs 
+
+The excel sheet of the solution is uploaded
+
+
