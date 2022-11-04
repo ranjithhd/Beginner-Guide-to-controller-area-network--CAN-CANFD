@@ -108,3 +108,23 @@ CAN2.0B for Extended Frame Format for Heavy Vehicles
 The standard frame format is specified in can Specification CAN2.0(A) by Robert Bosch. See below table for frame fields,sub-fields and its role in CAN Frame-
 
 Table 1: Frame Format For Standard CAN
+
+![Frame Format For Standard CAN](https://user-images.githubusercontent.com/115522470/199955060-af42087c-4704-4cbc-9611-e68f827aee18.png)
+
+#### Extended CAN Frame Format
+
+The extended Frame of CAN is almost similar to the standard frame except for its arbitration field. See below table for frame fields,sub-fields and its role in CAN Frame –
+
+Table: Frame Format For Extended CAN
+
+![Frame Format For Extended CAN](https://user-images.githubusercontent.com/115522470/199955344-6466e5dd-0143-4e5e-9d38-663bbc6db7b4.png)
+
+So as we can see Arbitration field in the extended frame format only differ from the standard CAN means extended CAN architecture designed in such a way that standard and extended CAN coexist on the same network.
+
+### Day-1 Activity-6
+
+#### CAN standard frame and extended frame used together in same network? if yes, which one has higher priority?
+
+Yes it is possible to have a system with both standard and extended can identifiers. The standard frame always is given priority against extended frame.
+
+
