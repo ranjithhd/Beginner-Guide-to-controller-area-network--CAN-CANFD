@@ -1,7 +1,7 @@
 
-## Day 4-Activity-1
+# Day 4-Activity-1
 
-### Understanding the evolution of Ethernet
+## Understanding the evolution of Ethernet
 
 First developed by Xerox PARC in the 1970s and ratified by IEEE as a standard in 1983, the evolution of Ethernet has taken this LAN technology through dozens of specifications.
 
@@ -39,7 +39,7 @@ In 2016, driven by demand from hyperscale web companies, the IEEE ratified 25 Gb
 
 The following year, in late 2017, the networking industry saw the ratification of 200 GbE and 400 GbE, both based on 50 Gbps single lanes. As the appetite for faster bandwidth skyrockets -- especially among cloud providers and other hyperscale data center operators -- the standards committee now turns its attention to 800 Gbps, 1 Tbps and beyond. The evolution of Ethernet continues.
 
-## Day 4-Activity 2
+# Day 4-Activity 2
 ## Introduction to the LIN bus
 
 #### Background
@@ -188,7 +188,7 @@ A diagnostic frame is called a PDU (Packet Data Unit) and starts with a NAD whic
 A LIN 2.0 master is backward compatible with a LIN 1.3 slave (with limitations). Both LIN 2.0 and LIN 1.3 slaves can coexist in a network but some new features like the improved checksum and automatic baud rate detection have to be avoided.
 
 
-## Day 4-Activity-5
+# Day 4-Activity-3
 
 ## Advantages and Disadvantages of Different Automotive Protocols 
 
