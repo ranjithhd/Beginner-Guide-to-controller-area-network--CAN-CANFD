@@ -39,7 +39,7 @@ In 2016, driven by demand from hyperscale web companies, the IEEE ratified 25 Gb
 
 The following year, in late 2017, the networking industry saw the ratification of 200 GbE and 400 GbE, both based on 50 Gbps single lanes. As the appetite for faster bandwidth skyrockets -- especially among cloud providers and other hyperscale data center operators -- the standards committee now turns its attention to 800 Gbps, 1 Tbps and beyond. The evolution of Ethernet continues.
 
-## Day 4-Activity:3
+## Day 4-Activity 2
 ## Introduction to the LIN bus
 
 #### Background
