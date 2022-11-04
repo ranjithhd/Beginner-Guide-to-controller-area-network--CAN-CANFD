@@ -188,3 +188,99 @@ A diagnostic frame is called a PDU (Packet Data Unit) and starts with a NAD whic
 A LIN 2.0 master is backward compatible with a LIN 1.3 slave (with limitations). Both LIN 2.0 and LIN 1.3 slaves can coexist in a network but some new features like the improved checksum and automatic baud rate detection have to be avoided.
 
 
+## Day 4-Activity-5
+
+## Advantages and Disadvantages of Different Automotive Protocols 
+
+#### Advantages of LIN protocol:
+
+•	As LIN is single wire-based interface, it reduces the cost and the complexity of implementation. 
+
+•	LIN is self-synchronized and therefore no need of external oscillators.
+
+•	LIN is the best and the most suited alternative to the CAN for applications that do not need high bandwidth and that are of low speed.
+
+#### Disadvantages of LIN protocol:
+
+•	Since LIN is low speed, it is not considered for safety and other important applications.
+
+•	The communication is always initiated by the master and therefore when the master device fails then the whole bus gets failed.
+
+•	There are no strong error checking mechanisms in LIN.
+
+##### Advantages of CAN protocol:
+
+•	CAN is used in different electrical environments which offers noise free transmission.
+
+•	In CAN any node on the bus can initiate the communication and any node can respond. Therefore, failure of one device/node will not lead to the failure of the entire 
+system.
+
+•	CAN protocol offers strong error checking mechanisms.
+
+##### Disadvantages of CAN protocol:
+
+•	CAN bus is more expensive than that of LIN
+
+•	Implementing CAN is bit complex than that of LIN due to increased number of nodes.
+
+##### Advantages of FlexRay:
+
+•	FlexRay is deterministic, fault-tolerant, and high-speed protocol than that of CAN protocol and therefore FlexRay is mostly used in safety critical applications.
+
+•	Since FlexRay is a synchronous protocol, it synchronizes its nodes without external synchronous clock.
+
+•	The star topology of the FlexRay reduces the exposed wire for the segment which in turn decreases the noise.
+
+•	It has better error checking mechanism compared to LIN and CAN.
+
+##### Disadvantages of FlexRay:
+
+•	It is expensive compared to LIN and CAN protocols.
+
+•	It is bit complex to implement
+
+•	It has lower operating voltages
+
+##### Advantages of Ethernet :
+
+•	The fastest speed provide by Gigabit ethernet is of 1Gbps. The speed ranges from more than 10 times Fast Ethernet.
+
+•	To form an Ethernet, we don’t need much cost. It is relatively inexpensive. Total cost induced is less.
+
+•	In Ethernet, all the node have an equivalent privileges. It does not follow client-server architecture.
+
+•	It does not require any switches or hubs
+
+•	Maintenance and administration are simple.
+
+•	The cable wont to connect systems in ethernet is strong to noise.
+
+•	As it is strong to the noise, the standard of the info transfer doesn’t degrade. The data transfer quality is good.
+
+•	With latest versions such as gigabit ethernet and wireless ethernet (IEEE 802.11ac/11ad) transfer speeds in data with the speed of 1-100Gbps.
+
+##### Disadvantages of Ethernet :
+
+•	It offers a nondeterministic service.
+
+•	It doesn’t hold good for real-time applications because it requires deterministic service.
+
+•	As priority packets cannot be set, it’s not suitable for a client-server architecture.
+
+•	In an interactive application, data is extremely small and wish quick data transfer. In ethernet, there’s a limit of the minimum size of the frame to 46B. As a 
+result, it’s not an honest choice for interactive applications.
+
+•	If you’re using it for interactive applications, you’ve got to feed dummy data to form the frame size 46B which is mandatory.
+
+•	Not suitable for traffic-intensive applications. In case the rate of traffic on the Ethernet goes up the efficiency of the Ethernet goes down.
+
+•	It provides connectionless communication over the network.
+
+•	The receiver cannot able to send any knowledge after receiving the packets.
+
+•	If there’s any problem in ethernet, it’s difficult to troubleshoot what cable or node within the network causing an actual problem.
+
+•	The 100Base-T4 version does not support full-duplex data communication mode.
+
+
+
