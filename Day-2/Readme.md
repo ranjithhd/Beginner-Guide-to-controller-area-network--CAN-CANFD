@@ -23,3 +23,17 @@ Priority inversion causes a high priority activity to get delayed for a long tim
 #### 2.	Where can I add bit stuffing and the range, where can I do bit stuffing?
 Bit stuffing is the insertion of non information bits into data. Note that stuffed bits should not be confused with overhead bits.
 Bit stuffing may be used to synchronize several channels before multiplexing or to rate-match two single channels to each other.
+
+![Bit stuffing](https://user-images.githubusercontent.com/115522470/199957358-2157ea00-a619-495e-b60c-570577cb48fe.jpg)
+
+#### Applications of Bit Stuffing – 
+
+1.	synchronize several channels before multiplexing
+
+2.	rate-match two single channels to each other
+
+3.	run length limited coding
+
+##### Run length limited coding – To limit the number of consecutive bits of the same value(i.e., binary value) in the data to be transmitted. A bit of the opposite value is inserted after the maximum allowed number of consecutive bits.
+Bit stuffing technique does not ensure that the sent data is intact at the receiver side (i.e., not corrupted by transmission errors). It is merely a way to ensure that the transmission starts and ends at the correct places.
+
