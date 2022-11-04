@@ -17,7 +17,8 @@ Metcalfe based Ethernet on what he learned from the Aloha system -- an earlier n
 
 Using the rudimentary Aloha protocol, a station would transmit a frame over a common data channel and then wait for confirmation it had reached its destination successfully. If the station didn't receive confirmation within a given period, it assumed a collision had occurred with another frame that a different node happened to send simultaneously. That station would continue to blindly resend the data until it achieved successful transmission. But, as nodes and transmissions increased, more collisions would occur, and the network became less efficient. An Aloha variation called slotted Aloha sought to minimize network contention problems by precisely coordinating individual transmissions, assigning them designated time slots via beacon signaling.
 
-##### Metcalfe's Ethernet experiment -- which he initially referred to as the Alto Aloha Network -- included several revolutionary new features that enabled significantly more efficient use of a network channel. Together, this set of rules -- now codified as the Carrier Sense Multiple Access/Collision Detect protocol -- enabled stations to monitor the availability of a shared path and detect collisions when two devices happened to send data at the same time. When frames did collide, the system would discard them, and each station would wait a randomly assigned length of time before reinitiating its transmission -- pausing and repeating as many times as necessary, in a process known as exponential back-off.
+##### Metcalfe's Ethernet experiment 
+Which he initially referred to as the Alto Aloha Network -- included several revolutionary new features that enabled significantly more efficient use of a network channel. Together, this set of rules -- now codified as the Carrier Sense Multiple Access/Collision Detect protocol -- enabled stations to monitor the availability of a shared path and detect collisions when two devices happened to send data at the same time. When frames did collide, the system would discard them, and each station would wait a randomly assigned length of time before reinitiating its transmission -- pausing and repeating as many times as necessary, in a process known as exponential back-off.
 
 By 1973, Metcalfe felt the technology had outgrown its original name, Alto Aloha Network, and rechristened it Ethernet. Four years later, Metcalfe and Boggs -- along with Charles Thacker and Butler Lampson, also of Xerox -- would successfully patent Ethernet technology.
 
@@ -31,7 +32,8 @@ In 1995, 100 Mbps Ethernet -- also known as Fast Ethernet or 100BASE-T -- debute
 
 Three years later, 802.3 hit a new milestone with the introduction of Gigabit Ethernet (1000Base-T) -- first over fiber optic cable and, subsequently, over twisted pair cabling.
 
-##### The evolution of Ethernet continued with 10 Gbps in 2002 -- first over fiber, then twinaxial and, finally, unshielded twisted pair cables. Eight years later, the IEEE approved 40 GbE and 100 GbE, speeds achieved by aggregating 10 Mbps lanes.
+##### The evolution of Ethernet continued with 10 Gbps in 2002 
+The first over fiber, then twinaxial and, finally, unshielded twisted pair cables. Eight years later, the IEEE approved 40 GbE and 100 GbE, speeds achieved by aggregating 10 Mbps lanes.
 
 In 2016, driven by demand from hyperscale web companies, the IEEE ratified 25 GbE, which promised to be 2.5 times faster than 10 GbE but more cost-effective than 40 GbE. Because it improves throughput by increasing the capacity of a single lane -- rather than aggregating multiple lower-capacity lanes -- 25 GbE requires less cable and power and has higher port density than 40 GbE. In some cases, an upgrade to 25 GbE lets data center operators extend the life of top-of-rack switches and avoid a full rip-and-replace upgrade of cabling infrastructure.
 
