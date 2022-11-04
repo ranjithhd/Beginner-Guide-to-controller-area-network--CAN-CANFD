@@ -20,3 +20,91 @@
 | **Applications** | Transmission airbags, antilock braking, Electric power steering | Steering wheel, seat, engine, Door | Camera and video connections | Steering by wire control, Anti-lock braking system | IP Cameras, Radar, Infotainment |
 
 
+### CAN arbitration be used for same ID?
+
+Two node on the network are not allowed to send messages with same id. If two nodes try to send messages with same id at the same time arbitration will not work. Instead, one of the transmitting  nodes will detect that his message is distorted outside of the arbitration field. 
+
+## Day 1: Activity-2
+
+2.	What are the different parameters to look in automotive.
+
+### CAN:
+
+•	Airbags
+
+•	ABS
+
+•	Cratie control
+
+•	Transmissions
+
+•	Transmitters
+
+•	Hybrid vehicle charging systems
+
+•	Audio/sound systems
+
+•	Suspension systems
+
+•	Power steering
+
+•	In-vehicle information system
+
+### LIN:
+
+•	Electric windows
+
+•	Door locks
+
+•	Lights
+
+•	Power seat controllers
+
+•	Rear view mirror control
+
+### Flexray
+
+•	Safety components
+
+•	Active suspension system
+
+•	High performance transmission
+
+•	Traction control  system
+
+•	Sensor components
+
+•	Steering wheel control
+
+### Ethernet:
+
+•	Cellular network communication
+
+•	Radios
+
+•	High resolution cameras
+
+•	In vehicle information system
+
+•	Instrument chuster
+
+## Day-1 Activity-3
+### Can two frames have same arbitration address? if yes, why? if not why not?
+
+No two nodes may transmit the same arbitration field. There is one exception to this rule, if the message contains no data, then any node can transmit that message. Since the bus is wired and dominant bit is logically 0, it follows that the message with numerically lowest arbitration field will win the arbitration. If two nodes try to send a message with the same ID at the same time, arbitration will not work. Instead one of the transmitting nodes will detect that his message is distorted outside of the arbitration field.
+
+## Day-1 Activity-5
+
+### CAN standard and extended frame format, understand each parameter in the frame.
+
+#### Standard CAN vs Extended CAN
+
+In 1991, Originally Bosch released CAN specification CAN 2.0 for passenger Vehicles which explains 11- bit identifier frame architecture but later on it divided into CAN 2.0(A) which is named as standard CAN be used in passenger cars dealing with 11-bit Identifier while other is CAN2.0(B) which is known as extended CAN be used in heavy vehicles like Buses and Trucks it deals with 29-bit Identifier. So the basic difference in both standard at message Identifier field.
+CAN2.0A for Standard Frame Format for Passenger Vehicles
+CAN2.0B for Extended Frame Format for Heavy Vehicles
+
+#### Standard or Classical CAN Frame
+
+The standard frame format is specified in can Specification CAN2.0(A) by Robert Bosch. See below table for frame fields,sub-fields and its role in CAN Frame-
+
+Table 1: Frame Format For Standard CAN
