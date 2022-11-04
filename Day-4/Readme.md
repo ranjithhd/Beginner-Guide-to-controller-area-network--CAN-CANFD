@@ -39,3 +39,47 @@ In 2016, driven by demand from hyperscale web companies, the IEEE ratified 25 Gb
 
 The following year, in late 2017, the networking industry saw the ratification of 200 GbE and 400 GbE, both based on 50 Gbps single lanes. As the appetite for faster bandwidth skyrockets -- especially among cloud providers and other hyperscale data center operators -- the standards committee now turns its attention to 800 Gbps, 1 Tbps and beyond. The evolution of Ethernet continues.
 
+## Day 4-Activity:3
+## Introduction to the LIN bus
+
+#### Background
+
+The protocol for the Local Interconnect Network (LIN) is based on the Volcano-Lite technology developed by the Volvo spin-out company Volcano Communications Technology (VCT). Since other car corporations also were interested in a more cost effective alternative to CAN, the LIN syndicate was created. In the middle of 1999 the first LIN protocol (1.0) was released by this syndicate. The protocol was updated twice in 2000. In November 2002 LIN 1.3 was released with changes mainly made in the physical layer. The latest version LIN 2.2A was released in 2010. With LIN 2.0 came some major changes and also some new features like diagnostics. The changes were mainly aimed at simplifying use of off-the-shelves slave nodes.
+
+##### Areas of use
+
+The LIN protocol is a compliment to the CAN and the SAE J1850 protocols for applications that are not time critical or does not need extreme fault tolerance, since LIN is not quite as reliable as CAN. The aim of LIN is to be easy to use and a more cost effective alternative to CAN. Examples of areas where LIN is and can be used in a car: window lift, mirrors, wiper and rain sensors.
+
+##### Quick facts
+
+LIN is an all-embracing concept according to the OSI-model, where the physical-, data link- , network- and application layers are covered by the specification.
+
+•	The LIN physical layer is based on ISO 9141 (the K-line).
+
+•	Master/slave organization
+
+•	Single wire plus ground
+
+•	Time triggered scheduling
+
+•	1-20 kbit/s
+
+•	Dominant/recessive bits
+
+•	Serial, byte oriented communication
+
+•	Max 40 m wire length
+
+•	Standard defined by the LIN organization: http://www.lin-subbus.org
+
+##### Physical Properties
+
+The LIN-bus transceiver is a modified version of the transceiver used by the ISO 9141 standard. The bus is bidirectional and connected to the node transceiver, and also via a termination resistor and a diode to Vbat of the node (Figure).
+
+![LIN Transreiver](https://user-images.githubusercontent.com/115522470/199962631-0384479e-174d-4dd0-8e57-beac1fd54a65.jpg)
+
+On the bus a logical low level (0) is dominant and a logical high level (1) is recessive.
+
+Voltage supply (Vsup) for an ECU should be between 7 V and 18 V. The limits for how the level of the bus is interpreted are shown in figure.
+
+
