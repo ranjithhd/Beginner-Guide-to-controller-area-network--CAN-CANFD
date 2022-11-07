@@ -296,11 +296,14 @@ From the log file 20180820-mimos2home its observed some of the properties of the
 
 The di£tierent channel	used in this log sheet are Battery Voltage, Engine Running Time, lignition timing, Current Duty Cycle, Load, Ignition Load, Shift Light1, Air Temp, Coolant Temp, MAP Source, Lambda Sensor 1 Throttle Position, Base Fuel Base Ignition, Target AFR, Fuel Air Temp Correction, Fuel Coolant Temp Correction, Ignition Coolant Temp Correction, Ignition Air Temp Correction, RPM, Transient Throttle Accel Coolant, Transient Throttle Enrich Sensitivity, Transient Throttle Enrich Decay Rate, Transient Throttle Persentage Async, Transient Throttle Percentage Enrich.
 
-The maximum and minim.um valuds of some of the abO\'C parameters are n1entioned beloi.v
-•	Maximum and minimw11value of AFR  is +•-150
-•	Max.unnm andl  1inimtun value of running time is 10000 sec and O
-seconds
-•	Maximum m1d mininuun value Battery Voltage is 16000Y and 8000\'
+  The maximum and minimum values of some of the above parameters are mentioned below
+  
+•	Maximum and minimum 1value of AFR  is +/-150
+
+•	Maximum andl minimum value of running time is 10000 sec and O seconds
+
+•	Maximum m1d mininuun value Battery Voltage is 16000v and 8000v
+
 •	Maximum and minimum Ignition Timing is 600 and -200
 
 
