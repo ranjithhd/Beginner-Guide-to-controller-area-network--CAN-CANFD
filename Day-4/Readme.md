@@ -306,7 +306,29 @@ The di£tierent channel	used in this log sheet are Battery Voltage, Engine Runni
 
 •	Maximum and minimum Ignition Timing is 600 and -200
 
+•	Maximum and minimum current Duty Cycle is 1000 and 0
 
+•	Maximum and minimum base fuel is 2000 and 0
+
+•	Maximuum and minimum pressure of ignition load is 1013 and 13
+
+•	Maximum and minimwn value of shift light is 1 and 0
+
+•	Maximum and minimum value of coolant temperature is 4231 and 2331
+
+•	Maximum and minimum value of throttle position is 1000 and 0
+
+•	Maximum and minimum value of fuel air temperature correction is 500 and -500
+
+Maximum and minimum value Base Ignition is 8OO and 0
+
+•	Maximum and minimum value Base Fuel is 2000 and 0
+
+•	Maximum  and  minimum  value Fuel Air Temperature  Correction is 500 and -500
+
+•	Maximum  and  minimum value Fuel Coolant Temperature correction is 250 and -100
+
+ 
 
 
 
