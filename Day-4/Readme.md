@@ -283,4 +283,11 @@ result, it’s not an honest choice for interactive applications.
 •	The 100Base-T4 version does not support full-duplex data communication mode.
 
 
+# Day 4-Activity-4
+### Collection of Log files
+
+Collected Log files and uploaded
+
+
+
 
