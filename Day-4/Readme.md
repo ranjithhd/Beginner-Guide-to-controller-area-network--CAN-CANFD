@@ -288,6 +288,22 @@ result, it’s not an honest choice for interactive applications.
 
 Collected Log files and uploaded
 
+# Day 4-Activity-5
+
+### Pick 1 log file & decrypt the frame
+
+From the log file 20180820-mimos2home its observed some of the properties of the frame those are the software used in this are ecu manager and the software version  is l.1.14.0	and the Channel used is AFR Difference and the battery voltage.
+
+The di£tierent channel	used in this log sheet are Battery Voltage, Engine Running Time, lignition timing, Current Duty Cycle, Load, Ignition Load, Shift Light1, Air Temp, Coolant Temp, MAP Source, Lambda Sensor 1 Throttle Position, Base Fuel Base Ignition, Target AFR, Fuel Air Temp Correction, Fuel Coolant Temp Correction, Ignition Coolant Temp Correction, Ignition Air Temp Correction, RPM, Transient Throttle Accel Coolant, Transient Throttle Enrich Sensitivity, Transient Throttle Enrich Decay Rate, Transient Throttle Persentage Async, Transient Throttle Percentage Enrich.
+
+The maximum and minim.um valuds of some of the abO\'C parameters are n1entioned beloi.v
+•	Maximum and minimw11value of AFR  is +•-150
+•	Max.unnm andl  1inimtun value of running time is 10000 sec and O
+seconds
+•	Maximum m1d mininuun value Battery Voltage is 16000Y and 8000\'
+•	Maximum and minimum Ignition Timing is 600 and -200
+
+
 
 
 
